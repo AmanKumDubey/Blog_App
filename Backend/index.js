@@ -1,4 +1,6 @@
 import express from "express";
+import mongoose from "mongoose";
+import connectWithDb from "./config/database.js"
 const app=express();
 
 
@@ -66,6 +68,8 @@ app.delete("/blogs/:id",(req,res)=>{
 
 })
 
+connectWithDb();
 app.listen(3000,(req,res)=>{
     console.log("App is running ");
+    
 })
